@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 creator = rblxopencloud.Group(
-    GROUP_ID, api_key="API_KEY" # Change this to your API key. Don't forget to change the Group ID as well. If you use your own account change .Group to .User and Group ID would be your User ID.
+    USER_ID/GROUP_ID, api_key="API_KEY" # Change this to your API key. Don't forget to change the Group ID as well. If you use your own account change .Group to .User and Group ID would be your User ID.
 )
 
 content = "local FrameIDs = {\n"
@@ -12,7 +12,7 @@ assetIDsArray = []
 def uploadAsset(currentFile):
     with open(currentFile, "rb") as file:
         asset = creator.upload_asset(
-            file, rblxopencloud.AssetType.Decal, Path(currentFile).stem, "Decal Description" # Make sure your file names don't contain anything that can get moderated. Use "frame00001" or something similar.
+            file, rblxopencloud.AssetType.Decal, Path(currentFile).stem, "Decal Description" # Make sure your file names don't contain anything that can get moderated. Use "frame00001" or something similar. Make sure to change your asset type to what you are uploading. .Decal for images, .Audio for audio files and .Model for models.
         )
         if isinstance(asset, rblxopencloud.Asset):
             print(asset.id, Path(currentFile).stem)
