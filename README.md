@@ -37,6 +37,7 @@ If you did everything correctly, now you can simply enter `python main.py` while
 ## Additional Information
 
 The script will save all new AssetIDs in `output.txt` located in the directory of the script. This is useful if you need to get all the IDs. If your script errors, then that means something wrong might have happened. In most cases, that would be because your account was moderated (banned). The script will automatically save all progress to the output, regardless of the error. Unfortunately, you will have to manually remove all old assets that were already uploaded. Just double-check your files to see if they might violate anything. If you think they would, manually upload them from an alternate account. If an output file already exists, the script will ask you if you want to continue. **IT WILL AUTOMATICALLY WIPE ALL CONTENTS OF THAT FILE!!!** Always back up your progress.
+If it errors with HTTP 400 then that means your asset name or description was moderated. Change it to "Example Asset" or anything static that can't be moderated.
 
 ## I am not responsible for your actions!
 **Anything you do with this script is on your behalf. I have nothing to do with any illegal actions. This script should not be abused, even if it does not violate any community standards or terms of service. This is the generic way developers would upload an asset remotely; this is why the Open Cloud API exists in the first place. Do not blame me for any moderated assets; this is purely your issue. I have been banned many times myself, so always use an alt account!**

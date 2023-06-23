@@ -12,7 +12,7 @@ assetIDsArray = []
 def uploadAsset(currentFile):
     with open(currentFile, "rb") as file:
         asset = creator.upload_asset(
-            file, rblxopencloud.AssetType.Decal, Path(currentFile).stem, "Decal Description" # Make sure your file names don't contain anything that can get moderated. Use "frame00001" or something similar. Make sure to change your asset type to what you are uploading. .Decal for images, .Audio for audio files and .Model for models.
+            file, rblxopencloud.AssetType.Decal, Path(currentFile).stem, "Decal Description" # Make sure your file names don't contain anything that can get moderated, if it does you will get HTTP 400 error. Use "frame00001" or something similar. Make sure to change your asset type to what you are uploading. .Decal for images, .Audio for audio files and .Model for models.
         )
         if isinstance(asset, rblxopencloud.Asset):
             print(asset.id, Path(currentFile).stem)
