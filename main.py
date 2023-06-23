@@ -32,6 +32,9 @@ def mainFunction():
             try:
                 uploadAsset(fileName.path)
             except Exception as e:
+                if len(assetIDsArray) == 0:
+                    print(e)
+                    exit("No files have been uploaded. Are you sure you have any files in the folder?")
                 for i in range(len(assetIDsArray)):
                     content += "   " + str(assetIDsArray[i]) + ",\n"
                 content += "}"
