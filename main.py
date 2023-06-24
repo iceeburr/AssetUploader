@@ -1,18 +1,14 @@
 import rblxopencloud
 import os
 from pathlib import Path
-
-creator = rblxopencloud.Group(
-    USER_ID/GROUP_ID, api_key="API_KEY" # Change this to your API key. Don't forget to change the Group ID as well. If you use your own account change .Group to .User and Group ID would be your User ID.
-)
-
-content = "local FrameIDs = {\n"
 assetIDsArray = []
+
+creator = rblxopencloud.Group("USER_ID/GROUP_ID", api_key="API_KEY") # Change this to your API key. Don't forget to change the Group ID as well. If you use your own account change .Group to .User and Group ID would be your User ID.
 
 def uploadAsset(currentFile):
     with open(currentFile, "rb") as file:
         asset = creator.upload_asset(
-            file, rblxopencloud.AssetType.Decal, Path(currentFile).stem, "Decal Description" # Make sure your file names don't contain anything that can get moderated, if it does you will get HTTP 400 error. Use "frame00001" or something similar. Make sure to change your asset type to what you are uploading. .Decal for images, .Audio for audio files and .Model for models.
+            file, rblxopencloud.AssetType.Decal, "Example Asset", "Decal Description" # Make sure your file names don't contain anything that can get moderated, if it does you will get HTTP 400 error. Use "frame00001" or something similar. Make sure to change your asset type to what you are uploading. .Decal for images, .Audio for audio files and .Model for models.
         )
         if isinstance(asset, rblxopencloud.Asset):
             print(asset.id, Path(currentFile).stem)
@@ -26,6 +22,7 @@ def uploadAsset(currentFile):
                     break
 
 def mainFunction():
+    content = "local FrameIDs = {\n"
     fileDirectory = './files' # If your directory is named differently please edit this.
     for fileName in os.scandir(fileDirectory):
         if fileName.is_file():
@@ -34,7 +31,7 @@ def mainFunction():
             except Exception as e:
                 if len(assetIDsArray) == 0:
                     print(e)
-                    exit("No files have been uploaded. Are you sure you have any files in the folder?")
+                    exit("There was an error. No files have been uploaded. Are you sure you entered the correct ID and Key?")
                 for i in range(len(assetIDsArray)):
                     content += "   " + str(assetIDsArray[i]) + ",\n"
                 content += "}"
