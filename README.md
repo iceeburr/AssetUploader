@@ -21,9 +21,7 @@ Now put all the assets you need in the files folder.
 
 Open `main.py` in any text editor you are comfortable with. On the very top, you will see this:
 ```py
-creator = rblxopencloud.Group(
-    USER_ID/GROUP_ID, api_key="API_KEY"
-)
+creator = rblxopencloud.Group("USER_ID/GROUP_ID", api_key="API_KEY")
 ```
 First, input the owner under `USER_ID/GROUP_ID`. If you don't have a group, change `rblxopencloud.Group(` to `rblxopencloud.User(`.
 
