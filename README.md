@@ -6,6 +6,10 @@
 
 **This simple [Python](https://www.python.org/) script will suit you if you want to upload a large amount of assets to Roblox. It uses a third-party library called [rblx-open-cloud](https://github.com/treeben77/rblx-open-cloud). Simply clone the repo, put your files inside the folder, change your `API_KEY` and you are good to go! The script will automatically save the IDs of each asset to an `output.txt` file.**
 
+### Notice
+
+**This repository recently got an update due to a change in the python library used. Make sure you use the latest version of the libraries you use, also please report any bugs and issues you might see. People with the old version of the python library will have an error if they use the new release. Make sure you stay to the latest version! That's all. Good luck!**
+
 ## Code Usage
 *For more in-depth documentation, refer to [this](https://devforum.roblox.com/t/video-player-v10-play-your-own-video-inside-roblox-full-resolution-fps-and-audio/2423381).*
 
