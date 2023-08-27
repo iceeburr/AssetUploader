@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 assetIDsArray = []
 
-creator = rblxopencloud.Group("USER_ID/GROUP_ID", api_key="API_KEY") # Change this to your API key. Don't forget to change the Group ID as well. If you use your own account change .Group to .User and Group ID would be your User ID.
+creator = rblxopencloud.User("USER_ID/GROUP_ID", api_key="API_KEY") # Change this to your API key. Don't forget to change the Group ID as well. If you use your own account change .Group to .User and Group ID would be your User ID.
 
 def uploadAsset(currentFile):
     with open(currentFile, "rb") as file:
@@ -15,7 +15,7 @@ def uploadAsset(currentFile):
             assetIDsArray.append(asset.id)
         else:
             while True:
-                status = asset.fetch_status()
+                status = asset.fetch_operation()
                 if status:
                     print(status.id, Path(currentFile).stem)
                     assetIDsArray.append(status.id)
